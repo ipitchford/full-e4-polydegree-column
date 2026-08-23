@@ -18,6 +18,7 @@ selection.
   `02b50aa0fe25648161a518c32bd04a83b0a4fee132e749cab46686d8b3d8f1b0`.
 - Publication-ready deterministic receipt SHA-256:
   `7a77fda760558a14133daf341a87371140a2ad06a757d8e9ccc1156453626484`.
+- Reserved version DOI: `10.5281/zenodo.22072044`.
 
 The full internal freeze is not redistributed because it contains historical
 workstation paths and third-party source PDFs. This public projection preserves

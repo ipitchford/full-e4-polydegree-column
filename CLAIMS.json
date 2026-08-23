@@ -41,7 +41,7 @@
     "quartic Hessian conjecture in dimension four"
   ],
   "assurance": {
-    "availability": "pending-immutable-release",
+    "availability": "public-repository-and-reserved-doi; immutable-release-pending",
     "internalReplay": "passed",
     "independentRerun": "not-established",
     "independentReimplementation": "not-established",

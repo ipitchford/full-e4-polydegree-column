@@ -12,7 +12,9 @@
 - Geometric companion: unconditional norm and pencil results; conditional transfer
 - Review state: five-role internal AI editorial review; no external specialist or journal peer review
 - Numerical reproduction: fresh producer-side normal and optimized replay; no unaffiliated implementation
-- Public identity: repository metadata is prepared before DOI reservation and immutable release
+- Version DOI: 10.5281/zenodo.22072044
+- Repository: https://github.com/ipitchford/full-e4-polydegree-column
+- Public identity: repository is public; immutable tag, GitHub prerelease, and Zenodo publication remain pending
 
 The package does not prove Furter's R(3), monotone rigidity in the Polydegree
 parameter, JC2, or HC4. See `CLAIM_BOUNDARY.md`.

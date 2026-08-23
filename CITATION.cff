@@ -4,6 +4,7 @@ title: "Effective Fourier certificates for the full e=4 Polydegree column"
 type: software
 version: 0.1.0-candidate
 date-released: 2026-08-23
+doi: 10.5281/zenodo.22072044
 authors:
   - name: "Anonymous"
 abstract: >-
@@ -13,6 +14,7 @@ abstract: >-
   normal/optimized replay. Companion papers provide a scoped Lean
   formalization and a conditional boundary-norm transfer theorem.
 repository-code: "https://github.com/ipitchford/full-e4-polydegree-column"
+repository-artifact: "https://github.com/ipitchford/full-e4-polydegree-column/releases/tag/v0.1.0-candidate"
 url: "https://evidencepress.org/releases/full-e4-polydegree-column/"
 keywords:
   - plane polynomial automorphisms
@@ -29,5 +31,6 @@ preferred-citation:
     - name: "Anonymous"
   year: 2026
   version: "0.1.0-candidate"
+  doi: 10.5281/zenodo.22072044
   url: "https://evidencepress.org/releases/full-e4-polydegree-column/"
   notes: "Unrefereed candidate; see LICENSES.md for the component-level licence map."

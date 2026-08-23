@@ -2,6 +2,10 @@
 
 **Version:** 0.1.0-candidate. **Status:** anonymous unrefereed candidate.
 
+**DOI:** [10.5281/zenodo.22072044](https://doi.org/10.5281/zenodo.22072044)
+
+**Repository:** <https://github.com/ipitchford/full-e4-polydegree-column>
+
 This repository releases three separable mathematical candidate papers and
 their replayable evidence:
 
