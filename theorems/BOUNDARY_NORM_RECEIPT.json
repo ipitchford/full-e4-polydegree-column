@@ -1,0 +1,52 @@
+{
+  "claim_boundary": "Exact finite-pencil specialization only; the norm lemma and BN transfer theorem remain mathematical-text obligations.",
+  "environment": {
+    "python": "3.14.6",
+    "sympy": "1.14.0"
+  },
+  "normal_optimized_semantic_identity": true,
+  "result": {
+    "alpha_relation": "alpha^2 + 3*alpha + 6 = 0",
+    "field": "Q(sqrt(-15))",
+    "gcd_degree": 0,
+    "kappa": 2,
+    "negative_control": [
+      {
+        "solution_nullity": 1,
+        "target_degree": 0
+      },
+      {
+        "solution_nullity": 1,
+        "target_degree": 1
+      }
+    ],
+    "optimized_python_safe": true,
+    "pencil_tests": [
+      {
+        "constraint_rank": 2,
+        "solution_nullity": 0,
+        "target_degree": 0
+      },
+      {
+        "constraint_rank": 2,
+        "solution_nullity": 0,
+        "target_degree": 1
+      },
+      {
+        "constraint_rank": 2,
+        "solution_nullity": 0,
+        "target_degree": 2
+      }
+    ],
+    "resultant": "2*alpha",
+    "status": "PASS",
+    "sympy_version": "1.14.0"
+  },
+  "schema": "hc4jc2.boundary-norm-pencil.v1",
+  "source_hashes": {
+    "manuscripts/boundary_norm_transfer/manuscript.md": "cff654a639e633d773a879e78bb59db054b9141c708eeaffb78b0aae6509711a",
+    "theorems/BOUNDARY_NORM_TRANSFER_THEOREM.md": "32eb1f098e0ba79b5651e5185de927e466da01e62dd9f6fbb73b0480645bff4e",
+    "theorems/verify_six_sheet_pencil.py": "02fc6bcab4fedc927918ae31060b40f51c68861ca8fe89d09a0404affdb50d1c"
+  },
+  "status": "PASS"
+}

@@ -1,0 +1,77 @@
+{
+  "auditor_sha256": "97326afe52a70d73fdc6b42afaa8cc14ef5ba2ddee9d8d76d7e92b83e213b8e6",
+  "case_count": 14985,
+  "coverage": "m=5,...,4999 in residues 0,2,3, in canonical order",
+  "environment": {
+    "precision_bits": 53,
+    "python": "3.14.6",
+    "python_flint": "0.8.0"
+  },
+  "ledger": {
+    "name": "e4_finite_cases_v2_m0005_m4999.jsonl",
+    "sha256": "a106c2df4bf6b771b0ee3245d6e0f5c95d1a1cb5485e9b03e93d942f77ccc3a1"
+  },
+  "locator_counts": {
+    "asymptotic_formula": 14949,
+    "stored_decimal": 36
+  },
+  "maximum_upper_endpoints": {
+    "h": {
+      "case": {
+        "m": 17,
+        "r": 2
+      },
+      "value": "[0.465782635441165 +/- 3.83e-16]"
+    },
+    "root_radius": {
+      "case": {
+        "m": 17,
+        "r": 2
+      },
+      "value": "[0.00695553440734237 +/- 4.44e-18]"
+    },
+    "tail0": {
+      "case": {
+        "m": 31,
+        "r": 0
+      },
+      "value": "[0.000207786085313322 +/- 1.41e-19]"
+    },
+    "tail1": {
+      "case": {
+        "m": 31,
+        "r": 0
+      },
+      "value": "[0.0135431280488511 +/- 2.61e-17]"
+    },
+    "tail2": {
+      "case": {
+        "m": 31,
+        "r": 0
+      },
+      "value": "[0.883557337634769 +/- 1.80e-16]"
+    }
+  },
+  "minimum_lower_endpoints": {
+    "jacobian_margin": {
+      "case": {
+        "m": 17,
+        "r": 2
+      },
+      "value": "[0.0684347291176693 +/- 3.24e-17]"
+    },
+    "next_margin": {
+      "case": {
+        "m": 17,
+        "r": 2
+      },
+      "value": "[1.47568875517639 +/- 2.42e-15]"
+    }
+  },
+  "producer_receipt": {
+    "name": "e4_finite_receipt_v2_m0005_m4999.json",
+    "sha256": "4e14868e1531fb85509dc017533b926121c130d31ef1eb1b41195d5cfddb5b54"
+  },
+  "schema": "hc4jc2.polydegree-e4-finite-audit.v2",
+  "status": "PASS"
+}

@@ -1,0 +1,59 @@
+{
+  "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
+  "manuscripts": [
+    {
+      "directory": "polydegree_e4_effective",
+      "log_metrics": {
+        "maximum_overfull_pt": 0.0,
+        "overfull_box_count": 0,
+        "underfull_box_count": 4
+      },
+      "pages": 14,
+      "pdf_text_gate": "PASS",
+      "sha256": {
+        "markdown": "306b8d59785bdfd19078228316fabcb389700d72a20d96211084d63c247b82e3",
+        "pdf": "fb390d8b8ade320fcc319c66131fc27cd3df93b22a778e0f806798cc8f7b3a7e",
+        "tex": "65539675de6fac240afb761543406233543ae9f8be80e8c8a951c0d9762115f4",
+        "text": "a86f1d79d01a7bdf1712dc2c10932540edccb0a6fa9b132d29fbba6267d92534"
+      },
+      "title": "Effective Fourier certificates for the full (e=4) Polydegree column"
+    },
+    {
+      "directory": "bordered_jacobian_formal",
+      "log_metrics": {
+        "maximum_overfull_pt": 0.0,
+        "overfull_box_count": 0,
+        "underfull_box_count": 0
+      },
+      "pages": 5,
+      "pdf_text_gate": "PASS",
+      "sha256": {
+        "markdown": "ccf6f14c8051c76a8908faf781f92360e5815667d8faf35fcf1163b6e2705155",
+        "pdf": "f1124e19628b09e9499eb3286a5baa923da22bed273e8e0d4fb9697a92cce601",
+        "tex": "fa53965319f126b0302f6a40ef45b2a2831ce9fdf00d8e2e33897c9eea97dc81",
+        "text": "3c1823f64aeaba4e708d91a848ecdf6384440d94c0423b78de54909041d618d2"
+      },
+      "title": "Formal verification of a universal bordered Jacobian identity over arbitrary commutative rings"
+    },
+    {
+      "directory": "boundary_norm_transfer",
+      "log_metrics": {
+        "maximum_overfull_pt": 0.0,
+        "overfull_box_count": 0,
+        "underfull_box_count": 3
+      },
+      "pages": 6,
+      "pdf_text_gate": "PASS",
+      "sha256": {
+        "markdown": "cff654a639e633d773a879e78bb59db054b9141c708eeaffb78b0aae6509711a",
+        "pdf": "db6932c0e396fc4059296923144af96f408cf97c57ab3e111ad950d5a08c84ab",
+        "tex": "0125033214ced96c72bb9b95c0806e16c6dc5679e70904d6a675c36e07a70ffd",
+        "text": "22112ffccc677ac39e25def66b0de7776d41ce58cd963efdc3c0fdbd09e83bed"
+      },
+      "title": "A finite pencil criterion for boundary-norm graph obstructions"
+    }
+  ],
+  "pandoc": "pandoc 3.9",
+  "schema": "hc4jc2.successor-manuscript-build.v1",
+  "status": "PASS"
+}

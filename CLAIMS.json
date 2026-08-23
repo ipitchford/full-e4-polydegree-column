@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "1.0.0",
+  "status": "unrefereed-candidate",
+  "version": "0.1.0-candidate",
+  "date": "2026-08-23",
+  "title": "Effective Fourier certificates for the full e=4 Polydegree column",
+  "authors": ["Anonymous"],
+  "claims": [
+    {
+      "id": "P7a",
+      "statementText": "For every integer d >= 2, G_(d+4) is contained in the closure of G_(d,5).",
+      "statementLatex": "\\mathcal G_{(d+4)}\\subseteq\\overline{\\mathcal G_{(d,5)}}\\quad(d\\ge2)",
+      "proofType": "theoretical-and-computer-assisted",
+      "manuscript": "manuscripts/polydegree_e4_effective/manuscript.md",
+      "coverage": {
+        "publishedInput": "2 <= d < 20",
+        "exactResidue": "d congruent to 1 modulo 4",
+        "finiteArb": "r in {0,2,3}, 5 <= m < 5000",
+        "finiteCases": 14985,
+        "eventual": "m >= 5000"
+      }
+    },
+    {
+      "id": "P7b",
+      "statementText": "The signed maximal-minor and bordered-determinant identities hold for the binary-form multiplication Jacobian over every commutative ring.",
+      "proofType": "Lean-kernel-checked",
+      "manuscript": "manuscripts/bordered_jacobian_formal/manuscript.md",
+      "formalPackage": "formal/BorderedJacobianUniversal"
+    },
+    {
+      "id": "BN",
+      "statementText": "The norm-support lemma and finite-pencil equivalence are unconditional under their stated hypotheses; the boundary-norm transfer is conditional on the explicit BN geometric package.",
+      "proofType": "mathematical-proof-with-exact-specialization-check",
+      "manuscript": "manuscripts/boundary_norm_transfer/manuscript.md"
+    }
+  ],
+  "nonImplications": [
+    "Furter R(3)",
+    "monotone R(3,n) rigidity",
+    "two-dimensional Jacobian conjecture",
+    "quartic Hessian conjecture in dimension four"
+  ],
+  "assurance": {
+    "availability": "pending-immutable-release",
+    "internalReplay": "passed",
+    "independentRerun": "not-established",
+    "independentReimplementation": "not-established",
+    "formalVerification": "P7b-only",
+    "specialistReview": "not-established",
+    "editorialPeerReview": "not-established",
+    "environmentReproducibility": "pinned-producer-and-CI-environments"
+  },
+  "novelty": {
+    "classification": "plausibly highly original and significant on a bounded search",
+    "priorityEstablished": false,
+    "worldLeadingClaim": false,
+    "audit": "research/PRIORITY_AUDIT_FINAL.md"
+  }
+}

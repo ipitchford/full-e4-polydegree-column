@@ -1,0 +1,33 @@
+{
+  "artifact_sha256": {
+    "manuscripts/polydegree_e4_effective/manuscript.md": "306b8d59785bdfd19078228316fabcb389700d72a20d96211084d63c247b82e3",
+    "p7a_effectivity/e4_eventual_envelope.py": "c910d55fc02b7df5677f32091ff5d3b1c71ef4197f844c4d52d7f9fbfae62510",
+    "p7a_effectivity/e4_eventual_receipt.json": "e9d151f80c138f58db73af2fdc88347afb8ff6c3c0f39c47b849efa2d047602b",
+    "p7a_effectivity/e4_finite_audit_v2.json": "d4702c869d6d735a3736ece0a19c61232e667b8dca6ba0c7277e1b5cd89923b6",
+    "p7a_effectivity/e4_finite_cases_v2_m0005_m4999.jsonl": "a106c2df4bf6b771b0ee3245d6e0f5c95d1a1cb5485e9b03e93d942f77ccc3a1",
+    "p7a_effectivity/e4_finite_cases_v2_m0005_m4999_optimized_replay.jsonl": "a106c2df4bf6b771b0ee3245d6e0f5c95d1a1cb5485e9b03e93d942f77ccc3a1",
+    "p7a_effectivity/e4_finite_receipt_v2_m0005_m4999.json": "4e14868e1531fb85509dc017533b926121c130d31ef1eb1b41195d5cfddb5b54",
+    "p7a_effectivity/e4_normalization_receipt.json": "b82f1709aeee6e1fcc58a8091125c11dcb3ff5b0b9095fc985c2bf516a62d47e",
+    "p7a_effectivity/verify_finite_ledger.py": "97326afe52a70d73fdc6b42afaa8cc14ef5ba2ddee9d8d76d7e92b83e213b8e6",
+    "p7a_effectivity/verify_normalization.py": "6c93b0f2ee84fbf058288894a8153f6c45a1a6ca174ddfd082abb093711476c3"
+  },
+  "claim_boundary": "Computer-assisted Polydegree containment proof. It is not a JC2 or HC4 result, external peer review, or independent reproduction.",
+  "coverage": {
+    "eventual": "d=4m+r, m>=5000, r in {0,2,3}",
+    "exact": "d=4m+1, every m>=1",
+    "finite_arb": "d=4m+r, 5<=m<5000, r in {0,2,3}",
+    "published": "2<=d<20 (Lewis--Perry--Straub)"
+  },
+  "environment": {
+    "python": "3.14.6"
+  },
+  "normal_optimized_replays": {
+    "eventual": true,
+    "finite_ledger_byte_identity": true,
+    "finite_structural_audit": true,
+    "normalization": true
+  },
+  "schema": "hc4jc2.polydegree-e4-release.v1",
+  "status": "PASS",
+  "theorem": "G_(d+4) subset closure(G_(d,5)) for every integer d>=2"
+}

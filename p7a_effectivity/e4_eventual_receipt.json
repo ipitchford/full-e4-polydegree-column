@@ -1,0 +1,217 @@
+{
+  "analytic_derivative_bounds": {
+    "defect_gradient_at_threshold": {
+      "decimal": "0.64271825000000005",
+      "denominator": "4000000",
+      "numerator": "2570873"
+    },
+    "hessian_defect_coefficient_actual": {
+      "decimal": "208.33333333333334",
+      "denominator": "3",
+      "numerator": "625"
+    },
+    "hessian_defect_coefficient_used": {
+      "decimal": "300",
+      "denominator": "1",
+      "numerator": "300"
+    },
+    "jacobian_defect_coefficient_actual": {
+      "decimal": "12",
+      "denominator": "1",
+      "numerator": "12"
+    },
+    "jacobian_defect_coefficient_used": {
+      "decimal": "15",
+      "denominator": "1",
+      "numerator": "15"
+    },
+    "limit_exponential_actual": {
+      "decimal": "1.0738496547270338",
+      "denominator_digits": "150",
+      "exact_fraction_sha256": "0533996212a5e636014e40c71220bcfc0f0edfdfdbdd0f2ea42cb2d094bc1984",
+      "numerator_digits": "150"
+    },
+    "limit_exponential_used": {
+      "decimal": "1.1000000000000001",
+      "denominator": "10",
+      "numerator": "11"
+    },
+    "limit_gradient_actual": {
+      "decimal": "26.451562500000001",
+      "denominator": "640",
+      "numerator": "16929"
+    },
+    "limit_hessian_actual": {
+      "decimal": "188.46738281250001",
+      "denominator": "5120",
+      "numerator": "964953"
+    },
+    "limit_hessian_used": {
+      "decimal": "258",
+      "denominator": "1",
+      "numerator": "258"
+    },
+    "next_gradient_actual_at_threshold": {
+      "decimal": "27.094280749999999",
+      "denominator": "4000000",
+      "numerator": "108377123"
+    },
+    "next_gradient_used": {
+      "decimal": "37",
+      "denominator": "1",
+      "numerator": "37"
+    },
+    "spectral_sum": {
+      "decimal": "7.125",
+      "denominator": "8",
+      "numerator": "57"
+    }
+  },
+  "arithmetic": "Fraction exact rational bounds plus 256-bit FLINT/Arb Fourier evaluation",
+  "constants": {
+    "K1_ball_actual": {
+      "decimal": "253.63417003417968",
+      "denominator": "204800000",
+      "numerator": "51944278023"
+    },
+    "K1_ball_used": {
+      "decimal": "254",
+      "denominator": "1",
+      "numerator": "254"
+    },
+    "K1_centre_used": {
+      "decimal": "2",
+      "denominator": "1",
+      "numerator": "2"
+    },
+    "K2_ball_actual": {
+      "decimal": "15373.372351367256",
+      "denominator_digits": "167",
+      "exact_fraction_sha256": "8c52214e07950e0fe8184d75b3d5ca12ce50185e20d5a3c5ecd2eb8087250578",
+      "numerator_digits": "171"
+    },
+    "K2_ball_used": {
+      "decimal": "15374",
+      "denominator": "1",
+      "numerator": "15374"
+    },
+    "K2_centre_actual": {
+      "decimal": "1104.3997874631109",
+      "denominator_digits": "161",
+      "exact_fraction_sha256": "37c5df70a2fa131722146b38017221fdc4bfb651720d9ccfdecebc01c7e1af96",
+      "numerator_digits": "164"
+    },
+    "K2_centre_used": {
+      "decimal": "1105",
+      "denominator": "1",
+      "numerator": "1105"
+    },
+    "tail_actual": {
+      "decimal": "2.4821769743516214e-06",
+      "denominator_digits": "16626",
+      "exact_fraction_sha256": "d71c5c40916160be3136e898203d68f297dfa3766dadafe6bf9c9ed9ffaa75e8",
+      "numerator_digits": "16620"
+    },
+    "tail_used": {
+      "decimal": "2.5000000000000002e-06",
+      "denominator": "400000",
+      "numerator": "1"
+    }
+  },
+  "degree_coverage": "all d=4m+r with m>=5000 and r in {0,2,3}; r=1 is exact",
+  "endpoint_predicates": {
+    "beta": {
+      "decimal": "1.3864329510978384",
+      "denominator": "483254527",
+      "numerator": "670000000"
+    },
+    "epsilon_ball": {
+      "decimal": "0.051417459999999998",
+      "denominator": "50000000",
+      "numerator": "2570873"
+    },
+    "h": {
+      "decimal": "0.23477524073436623",
+      "denominator": "233534937865993729",
+      "numerator": "54828221257373940"
+    },
+    "jacobian_margin": {
+      "decimal": "0.53044951853126754",
+      "denominator": "233534937865993729",
+      "numerator": "123878495351245849"
+    },
+    "lipschitz": {
+      "decimal": "273.42523799999998",
+      "denominator": "500000",
+      "numerator": "136712619"
+    },
+    "neumann_product": {
+      "decimal": "0.51674547299999996",
+      "denominator": "1000000000",
+      "numerator": "516745473"
+    },
+    "next_margin": {
+      "decimal": "1.3927528896551",
+      "denominator": "24162726350000000",
+      "numerator": "33652706945907929"
+    },
+    "residual": {
+      "decimal": "0.00044670000000000002",
+      "denominator": "10000000",
+      "numerator": "4467"
+    },
+    "root_radius": {
+      "decimal": "0.0012386391985108088",
+      "denominator": "483254527",
+      "numerator": "598578"
+    }
+  },
+  "environment": {
+    "precision_bits": 256,
+    "python": "3.14.6",
+    "python_flint": "0.8.0"
+  },
+  "fourier_arb": {
+    "first_order_values": {
+      "0": [
+        "[-0.55523747400560908101403659664832550198106661938135942856776898209529542174 +/- 6.27e-75] + [+/- 2.00e-75]j",
+        "[1.08194366809581296190837164164941458324551935954281865540722532459066097832 +/- 8.66e-75] + [+/- 4.91e-75]j",
+        "[-1.45474682430481458094206250434945874220625120219062775599347753689837216875 +/- 9.38e-75] + [+/- 6.56e-75]j"
+      ],
+      "2": [
+        "[-1.11791597759475969017382254377889079409008976833124850167722378702416017407 +/- 8.20e-75] + [+/- 6.30e-75]j",
+        "[+/- 1.65e-74] + [1.2572922615406110089330864580822236463419429922682343851919846143588213347 +/- 5.19e-74]j",
+        "[-1.29317872760478350406170128430562888579736151433033814003122686862849670908 +/- 7.24e-75] + [+/- 4.07e-75]j"
+      ],
+      "3": [
+        "[+/- 4.50e-75] + [+/- 4.50e-75]j",
+        "[-1.88495559215387594307758602996770173051830163962506349258496675538468984377 +/- 2.53e-75] + [+/- 6.92e-76]j",
+        "[+/- 2.04e-75] + [+/- 2.04e-75]j"
+      ]
+    },
+    "maximum_first_order": "[1.88495559215387594307758602996770173051830163962506349258496675538468984377 +/- 2.53e-75]",
+    "points": {
+      "0": [
+        "[0.332182979334183416182863316668088218990310759151047886841168185725644464192 +/- 4.75e-76] + [+/- 1.58e-76]j",
+        "[-0.351240736552036319657818732160244739973325459353360120999486051309607094031 +/- 1.04e-76] + [+/- 3.36e-77]j",
+        "[0.742783722759641948764690578896050686531555822541033526336500598146380195993 +/- 3.82e-76] + [+/- 8.73e-77]j"
+      ],
+      "2": [
+        "[+/- 1.58e-76] + [-0.332182979334183416182863316668088218990310759151047886841168185725644464192 +/- 4.75e-76]j",
+        "[-0.351240736552036319657818732160244739973325459353360120999486051309607094031 +/- 1.16e-76] + [+/- 3.36e-77]j",
+        "[+/- 8.73e-77] + [0.742783722759641948764690578896050686531555822541033526336500598146380195993 +/- 3.82e-76]j"
+      ],
+      "3": [
+        "[+/- 1.83e-78] + [+/- 1.83e-78]j",
+        "[-0.702481473104072639315637464320489479946650918706720241998972102619214188062 +/- 2.04e-76] + [+/- 6.72e-77]j",
+        "[+/- 4.09e-78] + [+/- 4.09e-78]j"
+      ]
+    },
+    "rho_abs": "[1.495348781221220541911898994140913395363459757614706345516593500047921466973 +/- 4.21e-77]"
+  },
+  "m_threshold": 5000,
+  "monotonicity": "For m>=5000 the 1/m and 1/m^2 head terms decrease; the finite and leading tails were evaluated at m=5000 and the limit tail is constant. All acceptance expressions worsen monotonically with the two defect envelopes.",
+  "schema": "hc4jc2.polydegree-e4-eventual.v1",
+  "script_sha256": "c910d55fc02b7df5677f32091ff5d3b1c71ef4197f844c4d52d7f9fbfae62510",
+  "status": "CERTIFIED"
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "hc4jc2.successor-internal-acceptance.v1",
+  "status": "ACCEPT_INTERNAL_CANDIDATE_RELEASE",
+  "submission_manifest_sha256": "867bff8d9b092a133194cf57a53d06dc3824d8aeb47508c5e5eec614bb8fc4a7",
+  "review_round": 2,
+  "reviewers": {
+    "applications_cross_disciplinary": {"decision": "ACCEPT", "critical": 0, "major": 0, "minor": 0},
+    "devils_advocate": {"decision": "ACCEPT", "critical": 0, "major": 0, "minor": 0},
+    "domain_mathematics": {"decision": "ACCEPT", "critical": 0, "major": 0, "minor": 0},
+    "editor_in_chief": {"decision": "ACCEPT", "critical": 0, "major": 0, "minor": 0},
+    "methodology_evidence": {"decision": "ACCEPT", "critical": 0, "major": 0, "minor": 0}
+  },
+  "unresolved_critical": 0,
+  "unresolved_major": 0,
+  "unresolved_minor": 0,
+  "external_peer_review": false,
+  "independent_reproduction": false,
+  "jc2_solved": false,
+  "hc4_solved": false
+}

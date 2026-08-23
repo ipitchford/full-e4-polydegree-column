@@ -1,0 +1,58 @@
+name: verify-candidate
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  python-replay:
+    name: Python ${{ matrix.python-version }} replay
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.12", "3.14"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - name: Install pinned dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements.txt
+      - name: Verify exact public package
+        run: python verification/verify_public_release.py
+      - name: Replay P7a in normal and optimized Python
+        run: |
+          python p7a_effectivity/verify_release.py
+          python -O p7a_effectivity/verify_release.py
+      - name: Replay boundary companion in normal and optimized Python
+        run: |
+          python theorems/verify_boundary_norm_release.py
+          python -O theorems/verify_boundary_norm_release.py
+      - name: Require semantic mutation rejection
+        run: python verification/negative_controls.py
+
+  lean-replay:
+    name: Lean 4.32.1 replay and axiom audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@v1
+        with:
+          lake-package-directory: formal/BorderedJacobianUniversal
+          auto-config: false
+          build: true
+          axiom-audit: true
+          axiom-audit-root: BorderedJacobianUniversal
+      - name: Run exact formal release verifier
+        working-directory: formal/BorderedJacobianUniversal
+        run: python3 verify_release.py

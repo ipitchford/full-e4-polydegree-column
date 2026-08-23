@@ -1,0 +1,11 @@
+{
+  "admissible_coefficients": 78144,
+  "arithmetic": "Python Fraction exact rational arithmetic",
+  "python": "3.14.6",
+  "range": "m=2,...,12; residues 0,1,2,3; offsets 0,1,2,3",
+  "rejected_support_triples": 1446940,
+  "row_count": 176,
+  "schema": "hc4jc2.polydegree-e4-normalization-audit.v1",
+  "script_sha256": "6c93b0f2ee84fbf058288894a8153f6c45a1a6ca174ddfd082abb093711476c3",
+  "status": "PASS"
+}

@@ -1,0 +1,67 @@
+{
+  "case_count": 14985,
+  "elapsed_seconds_nonsemantic": 628.336,
+  "environment": {
+    "precision_bits": 128,
+    "python": "3.14.6",
+    "python_flint": "0.8.0",
+    "workers": 12
+  },
+  "interval_serialization": "Human-readable Arb intervals plus separately stored outward-rounded upper/lower endpoints; acceptance uses the endpoints.",
+  "ledger": {
+    "name": "e4_finite_cases_v2_m0005_m4999.jsonl",
+    "sha256": "a106c2df4bf6b771b0ee3245d6e0f5c95d1a1cb5485e9b03e93d942f77ccc3a1"
+  },
+  "locator_counts": {
+    "asymptotic_formula": 14949,
+    "stored_decimal": 36
+  },
+  "m_range": {
+    "start_inclusive": 5,
+    "stop_exclusive": 5000
+  },
+  "proof_predicates_per_case": [
+    "Kantorovich h < 1/2",
+    "certified root radius < 1/100",
+    "fourth row nonzero throughout the root enclosure",
+    "Jacobian nonzero throughout the root enclosure"
+  ],
+  "residue_one_exact_branch": {
+    "first_three_rows": [
+      "0",
+      "0",
+      "0"
+    ],
+    "fourth_row_at_point": "1",
+    "jacobian": {
+      "determinant": "-(5m+2)(5m+3)(5m+4)/m^3",
+      "diagonal": [
+        "-(5m+2)/m",
+        "-(5m+3)/m",
+        "-(5m+4)/m"
+      ],
+      "nonzero_for": "every integer m>=1",
+      "shape": "diagonal"
+    },
+    "point": [
+      "0",
+      "0",
+      "0"
+    ],
+    "range": "every integer m>=1",
+    "residue": 1,
+    "status": "EXACT"
+  },
+  "residues_certified_by_arb": [
+    0,
+    2,
+    3
+  ],
+  "schema": "hc4jc2.polydegree-e4-finite-bridge.v2",
+  "sources": {
+    "certification_core": "87379c7ca7f53bca1db01d797b4d24a6a73d5926af0193c54a188db17752f466",
+    "driver": "e372f874afcdc2a9235d9125b5d5574940e880b739939a419475d0bbd9129bac",
+    "locators": "b5bf6e88fccdcee04e55866ade6d515a086860e2762e75784b031be42142f5f4"
+  },
+  "status": "CERTIFIED"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Effective Fourier certificates for the full e=4 Polydegree column",
+  "description": "Anonymous unrefereed three-paper candidate bundle. The principal paper proves the full e=4 Polydegree containment for every integer d >= 2 using published low-degree input, an exact residue class, 14,985 outward-rounded FLINT/Arb certificates, and an explicit eventual analytic branch. Companion papers provide a Lean-checked universal bordered-Jacobian identity over arbitrary commutative rings and a conditional finite-pencil boundary-norm transfer theorem. Producer-side replay and internal AI editorial review are recorded. Independent reproduction, external specialist review, journal peer review, Furter R(3), JC2, and HC4 are not claimed.",
+  "creators": [
+    {"name": "Anonymous"}
+  ],
+  "version": "0.1.0-candidate",
+  "publication_date": "2026-08-23",
+  "license": "cc-zero",
+  "keywords": [
+    "plane polynomial automorphisms",
+    "Polydegree Conjecture",
+    "interval arithmetic",
+    "Fourier certificates",
+    "Lean formalization",
+    "bordered Jacobian",
+    "unrefereed candidate"
+  ],
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "access_right": "open",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/ipitchford/full-e4-polydegree-column",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://evidencepress.org/releases/full-e4-polydegree-column/",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "10.5281/zenodo.21909085",
+      "relation": "isDerivedFrom",
+      "scheme": "doi"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "schema": "hc4jc2.p7b.formal-receipt.v1",
+  "generated_utc": "2026-08-23T16:45:04Z",
+  "claim": "P7b signed maximal-minor and bordered-determinant identities for binary-form coefficient multiplication over every commutative ring",
+  "claim_boundary": [
+    "No Jacobian-conjecture conclusion",
+    "No Hessian-conjecture conclusion",
+    "No mathematical-priority determination",
+    "Formal verification is relative to the pinned Lean kernel and Mathlib dependency"
+  ],
+  "parent_submission": {
+    "name": "HC4JC2_ACTIONS_1_TO_7_ACCEPTED_2026-08-23",
+    "manifest_sha256": "f28a6bafbe34c08aa16ad7f18d3f68550b271af43a1ff83b68c1da3cbf8d0f64",
+    "manuscript_relative_path": "submission/built-round4-author/bordered-jacobian/manuscript.md"
+  },
+  "toolchain": {
+    "lean_version": "4.32.1",
+    "lean_commit": "f054605aea4b840552cca2e725580bffd1e1b704",
+    "lake_version": "5.0.0",
+    "mathlib_release": "v4.32.1",
+    "mathlib_commit": "520045ab14e26149ee970e2e617ca04b09bde5d6"
+  },
+  "verification": {
+    "build_command": "lake build",
+    "build_exit_code": 0,
+    "build_jobs": 1966,
+    "build_warnings": 0,
+    "forbidden_source_scan_matches": 0,
+    "forbidden_source_scan_terms": [
+      "sorry",
+      "admit",
+      "axiom",
+      "sorryAx",
+      "native_decide",
+      "unsafe",
+      "simp?"
+    ],
+    "release_critical_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unexpected_axioms": [],
+    "boundary_test": "BorderedJacobianUniversal.det_bordered_zero_zero",
+    "zero_divisor_test": "BorderedJacobianUniversal.zmod_six_one_one_control"
+  },
+  "release_theorems": [
+    "BorderedJacobianUniversal.mulJac_mulVec_kappa",
+    "BorderedJacobianUniversal.det_anchorMinor",
+    "BorderedJacobianUniversal.universal_cofactorVec",
+    "BorderedJacobianUniversal.cofactorVec_mulJac",
+    "BorderedJacobianUniversal.det_mulJac_submatrix",
+    "BorderedJacobianUniversal.det_bordered"
+  ],
+  "files_sha256": {
+    "BorderedJacobianUniversal.lean": "9ce2746186037b8f4d2329880398a3031e8883009ee97f9667506b9ca450e884",
+    "BorderedJacobianUniversal/Anchor.lean": "9cb53d5b07f1c442094a8f43fc16aaa21bda3b14b9ccbfb9696f6f7689c90734",
+    "BorderedJacobianUniversal/General.lean": "25013e36f97916adf5f734eb86f32e745f17df649a6b8465925a52308a6ebd39",
+    "BorderedJacobianUniversal/Multiplication.lean": "56276ee7aaec0207df183571055609fe427a0bc7356ee3a025a75df17b317834",
+    "BorderedJacobianUniversal/Specialization.lean": "9c92589fec6cc1618b2ae76063273a95d44e85944cc35abc5f11930d79c2d4f1",
+    "BorderedJacobianUniversal/Tests.lean": "d92e37ecef4ef1ab3dffbbfcc35ee94b77b5659fd0d967f6dffd6f2829aec13b",
+    "BorderedJacobianUniversal/Universal.lean": "4db8f5fe120cf9a021b19f3a80f40532372f5125a55b67af689410a7cf875764",
+    "FORMALIZATION_CONCORDANCE.md": "347a066f55541b0504517dbb32ebad725894659719d7f4f843d5ea22f658abfc",
+    "LICENSE": "a5aecf74eacb3533283ab39dc9efa35d1d4492a80bcb7fae128df8b020459b3a",
+    "README.md": "39c3ab78ea59e0487bbf750f836dd7962f9d3efa5e68b94eb9fa7dbcc35c6699",
+    "lake-manifest.json": "2deb1b8473322d6bce2616bf3e1235c6793153f6c979060cb4003a96e4be0e5b",
+    "lakefile.toml": "8c1c124547b218b3b4301ecdc1a0163829e80580d90843614d30adec3e0c883b",
+    "lean-toolchain": "8e3538e0ab5f81a3ee04927d8838c8c674e0e112838b4b3ce87ec218143276af",
+    "verify_release.py": "afb4440a51c537bf76ce5bb35f825677ec6aeb81bad50dfa739c4d55fa0e2922"
+  }
+}

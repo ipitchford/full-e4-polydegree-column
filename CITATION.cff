@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "Please preserve the anonymous unrefereed-candidate status and exact version when citing."
+title: "Effective Fourier certificates for the full e=4 Polydegree column"
+type: software
+version: 0.1.0-candidate
+date-released: 2026-08-23
+authors:
+  - name: "Anonymous"
+abstract: >-
+  Anonymous unrefereed three-paper candidate bundle. The principal result is
+  the full e=4 Polydegree containment for every d at least 2, supported by a
+  written analytic proof, 14,985 FLINT/Arb finite certificates, and exact
+  normal/optimized replay. Companion papers provide a scoped Lean
+  formalization and a conditional boundary-norm transfer theorem.
+repository-code: "https://github.com/ipitchford/full-e4-polydegree-column"
+url: "https://evidencepress.org/releases/full-e4-polydegree-column/"
+keywords:
+  - plane polynomial automorphisms
+  - Polydegree Conjecture
+  - interval arithmetic
+  - Fourier certificates
+  - Lean
+  - bordered Jacobian
+  - unrefereed candidate
+preferred-citation:
+  type: article
+  title: "Effective Fourier certificates for the full e=4 Polydegree column"
+  authors:
+    - name: "Anonymous"
+  year: 2026
+  version: "0.1.0-candidate"
+  url: "https://evidencepress.org/releases/full-e4-polydegree-column/"
+  notes: "Unrefereed candidate; see LICENSES.md for the component-level licence map."
