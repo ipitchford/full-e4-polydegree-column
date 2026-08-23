@@ -11,9 +11,10 @@ from __future__ import annotations
 
 import hashlib
 import json
-import os
 from pathlib import Path
 import platform
+import re
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -51,6 +52,35 @@ def sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
+def require_supported_python(payload: dict[str, object], label: str) -> None:
+    """Accept the two Python minor lines exercised by the public CI matrix."""
+    environment = payload.get("environment")
+    if isinstance(environment, dict):
+        version = environment.get("python")
+    else:
+        version = payload.get("python")
+    require(isinstance(version, str), f"{label} Python version is missing")
+    match = re.fullmatch(r"(\d+)\.(\d+)\.(\d+)", version)
+    require(match is not None, f"{label} Python version is malformed: {version!r}")
+    minor_line = (int(match.group(1)), int(match.group(2)))
+    require(
+        minor_line in {(3, 12), (3, 14)},
+        f"{label} used unsupported Python minor line: {version}",
+    )
+
+
+def proof_payload(payload: dict[str, object], label: str) -> dict[str, object]:
+    """Remove only the non-mathematical Python patch string from a receipt."""
+    require_supported_python(payload, label)
+    normalized = json.loads(json.dumps(payload))
+    environment = normalized.get("environment")
+    if isinstance(environment, dict):
+        environment.pop("python")
+    else:
+        normalized.pop("python")
+    return normalized
+
+
 def module_audit(module_name: str, optimized: bool) -> dict[str, object]:
     program = (
         "import json,sys;"
@@ -84,27 +114,35 @@ def module_audit(module_name: str, optimized: bool) -> dict[str, object]:
     return payload
 
 
-def replay_eventual(expected_bytes: bytes, optimized: bool) -> None:
-    command = [sys.executable]
-    if optimized:
-        command.append("-O")
-    command.append(str(EVENTUAL_SCRIPT))
-    completed = subprocess.run(
-        command,
-        cwd=ROOT,
-        check=False,
-        capture_output=True,
-        text=True,
-    )
-    require(
-        completed.returncode == 0,
-        f"eventual verifier failed in {'optimized' if optimized else 'normal'} mode: "
-        f"stdout={completed.stdout!r} stderr={completed.stderr!r}",
-    )
-    require(
-        EVENTUAL_RECEIPT.read_bytes() == expected_bytes,
-        f"eventual receipt changed in {'optimized' if optimized else 'normal'} replay",
-    )
+def replay_eventual(expected: dict[str, object], optimized: bool) -> None:
+    with tempfile.TemporaryDirectory(prefix="hc4jc2-eventual-") as temporary:
+        temporary_script = Path(temporary) / EVENTUAL_SCRIPT.name
+        shutil.copyfile(EVENTUAL_SCRIPT, temporary_script)
+        command = [sys.executable]
+        if optimized:
+            command.append("-O")
+        command.append(str(temporary_script))
+        completed = subprocess.run(
+            command,
+            cwd=ROOT,
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+        require(
+            completed.returncode == 0,
+            f"eventual verifier failed in {'optimized' if optimized else 'normal'} mode: "
+            f"stdout={completed.stdout!r} stderr={completed.stderr!r}",
+        )
+        generated_path = temporary_script.with_name(EVENTUAL_RECEIPT.name)
+        require(generated_path.is_file(), "eventual verifier did not write its receipt")
+        generated = json.loads(generated_path.read_text(encoding="utf-8"))
+        require(isinstance(generated, dict), "generated eventual receipt is not an object")
+        require(
+            proof_payload(generated, "generated eventual receipt")
+            == proof_payload(expected, "stored eventual receipt"),
+            f"eventual proof payload changed in {'optimized' if optimized else 'normal'} replay",
+        )
 
 
 def validate_finite_producer() -> dict[str, object]:
@@ -131,20 +169,6 @@ def validate_finite_producer() -> dict[str, object]:
     return receipt
 
 
-def atomic_json_write(path: Path, payload: dict[str, object]) -> None:
-    data = json.dumps(payload, indent=2, sort_keys=True) + "\n"
-    with tempfile.NamedTemporaryFile(
-        mode="w",
-        encoding="utf-8",
-        dir=path.parent,
-        prefix=f".{path.name}.",
-        delete=False,
-    ) as handle:
-        handle.write(data)
-        temporary = Path(handle.name)
-    os.replace(temporary, path)
-
-
 def verify() -> dict[str, object]:
     required = (
         MANUSCRIPT,
@@ -161,26 +185,40 @@ def verify() -> dict[str, object]:
     for path in required:
         require(path.is_file(), f"required release artifact is missing: {path.relative_to(ROOT)}")
 
-    expected_eventual = EVENTUAL_RECEIPT.read_bytes()
+    expected_eventual = json.loads(EVENTUAL_RECEIPT.read_text(encoding="utf-8"))
+    require(isinstance(expected_eventual, dict), "stored eventual receipt is not an object")
     replay_eventual(expected_eventual, optimized=False)
     replay_eventual(expected_eventual, optimized=True)
 
     normalization_normal = module_audit("verify_normalization", optimized=False)
     normalization_optimized = module_audit("verify_normalization", optimized=True)
-    require(normalization_normal == normalization_optimized, "normalization audits differ by mode")
+    normalization_stored = json.loads(NORMALIZATION_RECEIPT.read_text(encoding="utf-8"))
+    require(isinstance(normalization_stored, dict), "stored normalization receipt is not an object")
     require(
-        normalization_normal
-        == json.loads(NORMALIZATION_RECEIPT.read_text(encoding="utf-8")),
-        "fresh normalization audit differs from the stored receipt",
+        proof_payload(normalization_normal, "normal normalization audit")
+        == proof_payload(normalization_optimized, "optimized normalization audit"),
+        "normalization proof payloads differ by mode",
+    )
+    require(
+        proof_payload(normalization_normal, "fresh normalization audit")
+        == proof_payload(normalization_stored, "stored normalization receipt"),
+        "fresh normalization proof payload differs from the stored receipt",
     )
 
     validate_finite_producer()
     finite_normal = module_audit("verify_finite_ledger", optimized=False)
     finite_optimized = module_audit("verify_finite_ledger", optimized=True)
-    require(finite_normal == finite_optimized, "finite ledger audits differ by mode")
+    finite_stored = json.loads(FINITE_AUDIT_RECEIPT.read_text(encoding="utf-8"))
+    require(isinstance(finite_stored, dict), "stored finite audit receipt is not an object")
     require(
-        finite_normal == json.loads(FINITE_AUDIT_RECEIPT.read_text(encoding="utf-8")),
-        "fresh finite audit differs from the stored receipt",
+        proof_payload(finite_normal, "normal finite audit")
+        == proof_payload(finite_optimized, "optimized finite audit"),
+        "finite ledger proof payloads differ by mode",
+    )
+    require(
+        proof_payload(finite_normal, "fresh finite audit")
+        == proof_payload(finite_stored, "stored finite audit receipt"),
+        "fresh finite proof payload differs from the stored receipt",
     )
     require(
         sha256(FINITE_LEDGER) == sha256(FINITE_OPTIMIZED_LEDGER),
@@ -221,7 +259,14 @@ def verify() -> dict[str, object]:
 def main() -> int:
     try:
         result = verify()
-        atomic_json_write(RELEASE_RECEIPT, result)
+        require(RELEASE_RECEIPT.is_file(), "stored release receipt is missing")
+        stored = json.loads(RELEASE_RECEIPT.read_text(encoding="utf-8"))
+        require(isinstance(stored, dict), "stored release receipt is not an object")
+        require(
+            proof_payload(result, "fresh release receipt")
+            == proof_payload(stored, "stored release receipt"),
+            "fresh release proof payload differs from the stored receipt",
+        )
         print(
             json.dumps(
                 {
